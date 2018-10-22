@@ -1,38 +1,35 @@
 jQuery(document).ready(function(){
-	// 選択肢①の確認ダイアログ
-	$('#wrapper #choices #choice1').click(function(){
-		if(!confirm("「① 辛くて当然だからまだまだ頑張ろう」\nでよろしいですか？")){
+
+	$cushion = 'cushion.html';
+
+	function pickText($class) {
+		return $($class).text();
+	}
+
+	function createDialog($id) {
+		$text = pickText($id.selector+' p');
+		if(!confirm("「"+ $text +"」\nでよろしいですか？")){
 			// キャンセル
 			return false;
 		} else {
-			location.href = 'index.html';
+			location.href = $cushion;
 		}
+	}
+
+	// 選択肢①の確認ダイアログ
+	$('#wrapper #choices #choice1').click(function(){
+		createDialog($('#wrapper #choices #choice1'));
 	});
 	// 選択肢②の確認ダイアログ
 	$('#wrapper #choices #choice2').click(function(){
-		if(!confirm("「② これくらいどうってことない」\nでよろしいですか？")){
-			// キャンセル
-			return false;
-		} else {
-			location.href = 'index.html';
-		}
+		createDialog($('#wrapper #choices #choice2'));
 	});
 	// 選択肢③の確認ダイアログ
 	$('#wrapper #choices #choice3').click(function(){
-		if(!confirm("「③ もうすぐ頂上だからあと少し頑張れば出来る」\nでよろしいですか？")){
-			// キャンセル
-			return false;
-		} else {
-			location.href = 'index.html';
-		}
+		createDialog($('#wrapper #choices #choice3'));
 	});
 	// 選択肢④の確認ダイアログ	
 	$('#wrapper #choices #choice4').click(function(){
-		if(!confirm("「④ ここまでよく頑張れたな」\nでよろしいですか？")){
-			// キャンセル
-			return false;
-		} else {
-			location.href = 'index.html';
-		}
+		createDialog($('#wrapper #choices #choice4'));
 	});
 });
