@@ -32,4 +32,6 @@ jQuery(document).ready(function(){
 	$('#wrapper #choices #choice4').click(function(){
 		createDialog($('#wrapper #choices #choice4'));
 	});
+
+
 });
