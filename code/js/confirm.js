@@ -13,7 +13,8 @@ jQuery(document).ready(function(){
 			return false;
 		} else {
 			sessionStorage.setItem("selectText", $text);
-			location.href = $cushion + "?" + "test=" + $text;
+			// location.href = $cushion + "?" + "test=" + $text;
+			location.href = $cushion;
 		}
 	}
 
