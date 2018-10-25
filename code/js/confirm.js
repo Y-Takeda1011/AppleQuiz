@@ -12,7 +12,8 @@ jQuery(document).ready(function(){
 			// キャンセル
 			return false;
 		} else {
-			location.href = $cushion;
+			sessionStorage.setItem("selectText", $text);
+			location.href = $cushion + "?" + "test=" + $text;
 		}
 	}
 
